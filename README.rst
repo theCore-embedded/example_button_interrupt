@@ -31,8 +31,6 @@ Supported targets (boards)
 +---------------------+--------------------------+-----------------------------------+
 | Target name         | Configuration file       | Description                       |
 +=====================+==========================+===================================+
-| host                | host.json                | Host target build                 |
-+---------------------+--------------------------+-----------------------------------+
 | stm32f4_disc        | stm32f4_discovery.json   | STM32F4 discovery board           |
 +---------------------+--------------------------+-----------------------------------+
 | tiva_tm4c_launchpad | tiva_tm4c_launchpad.json | TM4C123G LaunchPad Evaluation Kit |

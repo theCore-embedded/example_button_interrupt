@@ -1,0 +1,33 @@
+{
+    "platform": {
+        "name": "tm4c",
+        "device": "TM4C123GH6PM",
+        "console": "UART0",
+        "uart": [
+            {
+                "id": "UART0",
+                "comment": "UART-over-USB console output"
+            }
+        ],
+        "pinmux": [
+            {
+                "ids": [ "PA0", "PA1" ],
+                "dir": "hw",
+                "hws": { "PA0": "UART0_RX", "PA1": "UART0_TX" },
+                "comment": "UART0 console pins"
+            },
+            {
+                "ids": [ "PF4" ],
+                "dir": "in",
+                "pin_type": "push",
+                "comment": "SW1 button"
+            }
+        ],
+        "gpio_alias": [
+            {
+                "id": "PF4",
+                "alias": "button"
+            }
+        ]
+    }
+}

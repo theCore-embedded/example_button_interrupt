@@ -1,33 +1,49 @@
 {
-    "platform": {
-        "name": "tm4c",
-        "device": "TM4C123GH6PM",
-        "console": "UART0",
-        "uart": [
-            {
-                "id": "UART0",
-                "comment": "UART-over-USB console output"
-            }
-        ],
-        "pinmux": [
-            {
-                "ids": [ "PA0", "PA1" ],
-                "dir": "hw",
-                "hws": { "PA0": "UART0_RX", "PA1": "UART0_TX" },
-                "comment": "UART0 console pins"
+    "menu-platform": {
+        "config-name": "TM4C",
+        "menu-tm4c": {
+            "config-device": "TM4C123GH6PM",
+            "config-console": "UART0",
+            "menu-timer": {
+                "config-source": "systick",
+                "config-owner": "user",
+                "config-freq": "100"
             },
-            {
-                "ids": [ "PF4" ],
-                "dir": "in",
-                "pin_type": "push",
-                "comment": "SW1 button"
+            "menu-uart": {
+                "table-uart": [
+                    "UART0"
+                ],
+                "menu-UART0": {
+                    "config-baud": 115200
+                }
+            },
+            "menu-pinconfig": {
+                "table-pins": [
+                    "PA0",
+                    "PA1",
+                    "PF4"
+                ],
+                "menu-PA0": {
+                    "config-direction": "af",
+                    "config-type": "standard",
+                    "config-strength": "6mA",
+                    "config-afsel": "U0Rx",
+                    "config-comment": "UART0 RX Pin"
+                },
+                "menu-PA1": {
+                    "config-direction": "af",
+                    "config-type": "standard",
+                    "config-strength": "6mA",
+                    "config-afsel": "U0Tx",
+                    "config-comment": "UART0 TX Pin"
+                },
+                "menu-PF4": {
+                    "config-direction": "input",
+                    "config-type": "push",
+                    "config-strength": "6mA",
+                    "config-gpio-alias": "button"
+                }
             }
-        ],
-        "gpio_alias": [
-            {
-                "id": "PF4",
-                "alias": "button"
-            }
-        ]
+        }
     }
 }
